@@ -34,7 +34,7 @@ Now you are all set to run the project. To run the Visual Studio Code run **flut
  
  <img src="images/FirstPage.png" width="200">
  
- <img src="images/LastPage.png" width="200">
+ <img src="images/LastPage.JPG" width="200">
 
 
 </p>
