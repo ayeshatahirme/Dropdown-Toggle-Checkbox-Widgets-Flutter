@@ -26,7 +26,19 @@ _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
+DateTime currentDate = DateTime.now();
+// Function for date picker
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime pickedDate = await showDatePicker(
+        context: context,
+        initialDate: currentDate,
+        firstDate: DateTime(2015),
+        lastDate: DateTime(2050));
+    if (pickedDate != null && pickedDate != currentDate)
+      setState(() {
+        currentDate = pickedDate;
+      });
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -201,8 +213,36 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [
                   Expanded(
-                    child: CustomDropDown(text: 'From', listItem: ['14-02-20', '12-04-21']),
+                    child: Container(
+                    height: 100,
+                    width: 70,
+                    margin: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: Colors.green[100],
+                      borderRadius: BorderRadius.circular(10),
                     ),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                      height: 20.0,
+                    ),
+                    Text(currentDate.toString()),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    RaisedButton(
+                      textColor: Colors.white,  
+                      color: Colors.green[900],
+                      child: Text('Select date'),
+                      onPressed: () => _selectDate(context),
+                    ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                      ]
+                    ),
+                  ),
+                ),
                     Expanded(
                       child:
                       Container(
@@ -214,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(10),
                         ), 
                         child: TextField(
-                        obscureText: true,
+                        obscureText: false,
                         decoration: InputDecoration(
                           labelText: 'To',
                         ),
