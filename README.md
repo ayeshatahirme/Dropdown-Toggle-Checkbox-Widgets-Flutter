@@ -32,9 +32,9 @@ Now you are all set to run the project. To run the Visual Studio Code run **flut
 ### Screenshots of app
 <p>
  
- ![expanded first page](https://user-images.githubusercontent.com/48019432/116187807-b0726f80-a73f-11eb-95c6-5887f77ed775.png)
+ <img src="images/FirstPage.png" width="350">
  
- ![expanded last page](https://user-images.githubusercontent.com/48019432/116187817-b700e700-a73f-11eb-9fde-c0ebcb514650.JPG)
+ <img src="images/LastPage.JPG" width="350">
 
 
 </p>
